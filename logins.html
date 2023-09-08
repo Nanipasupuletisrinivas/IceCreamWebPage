@@ -1,0 +1,76 @@
+<html>
+    <style>
+        body{
+            padding: 40px 50px;
+            box-shadow: 220px 150px 290px aqua;
+
+            }
+            #btn{
+                border-color: aqua;
+                border-radius: 50px;
+                padding: 10px 15px;
+                border-width: 10px;
+                
+            }
+    </style>   
+ <body bgcolor="green">
+
+    <center>
+            <h2>
+            <font color='lime'>Fill the Details</font>
+            </h2>
+        <input type="text" placeholder="Enter valid E-mail" id="emal"/>
+        <br/>
+        <br/>
+    
+        <input type="password" placeholder="Enter Password" id="psw">
+        <p id ="para"></p>
+        <br/>
+        <br/>
+        <button type='button' onclick="fun()" id="btn"><h1><font color="red">Enter</font></h1></button>
+        <h2><a href="iceCream.html"><font color="aqua">proceed</font></a></h2>
+
+    </center>
+
+    </body>
+</html>
+<script>
+
+    let chk=document.getElementById("psw");
+    function fun()
+    {
+        let str=document.getElementById('psw').value;
+        let str1=document.getElementById('emal').value;
+        if(str.length==0 || str1.length==0){
+            alert('Plz Fill all the details');
+        }
+        else
+        {
+            alert("Thank you..!");
+            let c=0;
+            for (let i=0;i<str.length;i++)
+            {
+                if(str[i]=='!' || str[i]=='@' || str[i]=='#' || str[i]=='$' || str[i]=='%' || str[i]=='^' || str[i]=='&'  || str[i]=='*')
+                {
+                    c++;
+                }
+            }
+            if(c==0)
+            {
+                alert("Password must contais any special character");
+            }
+            let c1=0;
+            for (let i=0;i<str1.length;i++)
+            {
+                if(str1[i]=='@')
+                {
+                    c1++;
+                }
+            }
+            if(c1==0 && (str.length!=0) && (str1.length !=0))
+            {
+                alert('Enter valid email');
+            }
+        }
+    }
+</script>

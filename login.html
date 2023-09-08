@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <title>
+            Login
+        </title>
+        <style>
+            .login{
+                width: 320px;
+                height: 420px;
+                background: #000;
+                color:#fff;
+                top:50%;
+                left:50%;
+                position: absolute;
+                transform: translate(-50%,-50%);
+                box-sizing: border-box;
+                padding: 70px 30px;
+            }
+            .avatar{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                position: absolute;
+                top:-50px;
+                left:calc(50% - 50px);
+            }
+            h1{
+                margin: 0;
+                padding: 0 0 20px;
+                text-align: center;
+                font-size: 22px;
+            }
+            .login input{
+                width: 100%;
+                margin-bottom: 20px;;
+            }
+            .login input[type="text"],input[type="password"]
+            {
+                border:none;
+                border-bottom: 1px solid #fff;
+                background: transparent;
+                outline:none;
+                height: 40px;
+                color: #fff;
+                font-size: 16px;
+            }
+            .login input[type="submit"]
+            {
+                border: none;
+                outline: none;
+                height: 40px;;
+                background: #fb2525;
+                color:#fff;
+                font-size:18px; 
+                border-radius: 20px;;
+            }
+            .login input[type="submit"]:hover
+            {
+                cursor: pointer;
+                background: #ffc107;
+                color: #000;
+            }
+            .login a{
+                text-decoration: none;
+                font-size: 18px;
+                line-height: 20px;
+                color: darkgrey;
+            }
+            .login a:hover{
+                color:#ffc107;
+            }
+            body{
+                background-image: url('https://i2.pickpik.com/photos/537/56/906/sea-coffee-morning-breakfast-preview.jpg');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            a:link{
+                color:orange;
+            }
+            a:active{
+                color:lime;
+            }
+            a:visited{
+                color:red;
+            }
+            a:hover{
+                color:blue;
+            }
+            button{
+                height: auto;
+            }
+            a{  
+                font-size: 20px;
+                padding: 15px;
+            }
+        </style>
+    </head>
+
+<body>
+    <div class ="login">
+        <img src="https://cdn.pixabay.com/photo/2016/04/26/12/25/male-1354358_1280.png" class="avatar">
+        <h1>Log In here</h1>
+        <form>
+            <p>E-mail</p>
+            <input type="text" name="" placeholder="Enter E-mail" id='email'>
+            <p>Password</p>
+            <input type="password" name="" placeholder="Enter Password" id="psw">
+            
+            <a href="#" onclick='fun()'>LogIn</a>
+            <a href="#" onclick="href='signup.html',alert('Create New Account')">Forgot Password</a>
+        </form>
+    </div>
+
+</body>
+<script>
+function fun()
+    {
+        let str=document.getElementById('email').value;
+        let str1=document.getElementById('psw').value;
+        if(str.length==0 || str1.length==0){
+            alert('Plz Fill all the details');
+        }
+        else
+        {
+            alert("Thank you..!");
+            let c=0;
+            for (let i=0;i<str.length;i++)
+            {
+                if(str[i]=='!' || str[i]=='@' || str[i]=='#' || str[i]=='$' || str[i]=='%' || str[i]=='^' || str[i]=='&'  || str[i]=='*')
+                {
+                    c++;
+                }
+            }
+            if(c==0)
+            {
+                alert("Password must contais any special character");
+            }
+            let c1=0;
+            for (let i=0;i<str1.length;i++)
+            {
+                if(str1[i]=='@')
+                {
+                    c1++;
+                }
+            }
+            if(c1==0 && (str.length!=0) && (str1.length !=0))
+            {
+                alert('Enter valid email');
+            }
+            else
+            {
+                location.href="iceCream.html";
+            }
+        }
+    }
+</script>
+</html>
